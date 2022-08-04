@@ -10,4 +10,27 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 
 ## First setup
 
-**[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
+### Step 1.1 Getting Docker
+[Install Docker](https://docs.docker.com/get-docker/)
+
+Test that Docker is ready by running the following commands in your terminal: `docker -v`
+
+### Step 1.2 Testing the Backend
+Run, `docker-compose up` from the project root directory to load Anythink's backend and frontend.
+
+If Docker is working correctly, the backend should be running and able to connect to your local database.
+
+Test this by pointing your browser to [http://localhost:3000/api/ping](http://localhost:3000/api/ping)
+
+You should see this message in your browser.
+```bash
+{"msg":"Pong! Seems like Everythink is working, great job!"}
+```
+
+### Step 1.3 Check the Frontend and Register
+
+Now, it’s time to check the frontend and make sure it’s connected to the backend.
+
+If everything is working properly, you’ll be able to create a new user on [http://localhost:3001/register](http://localhost:3001/register)
+
+Create one (choose a cool nickname and everything) and you will be ready to start.
