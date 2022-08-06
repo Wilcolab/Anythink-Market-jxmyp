@@ -68,8 +68,16 @@ class Favorites(TypedTable):
     user_id: int
 
 
+class Titles(TypedTable):
+    __table__ = "titles"
+
+    item_id: int
+    title: str
+
+
 users = Users()
 items = Items()
 tags = Tags()
 items_to_tags = ItemsToTags()
 favorites = Favorites()
+titles = Titles()
