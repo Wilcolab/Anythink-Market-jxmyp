@@ -207,7 +207,15 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
             query = query.join(
                 titles,
             ).on(
-                (items.id == titles.item_id),
+                (items.id == titles.item_id) & (
+                    titles.title == Query.from_(
+                        titles,
+                    ).where(
+                        titles.title == Parameter(query_params_count),
+                    ).select(
+                        titles.title,
+                    )
+                ),
             )
             # fmt: on
 
